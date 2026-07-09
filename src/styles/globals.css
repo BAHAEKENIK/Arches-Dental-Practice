@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@property --a {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+
+@property --x {
+  syntax: "<number>";
+  initial-value: 50;
+  inherits: true;
+}
+
+@property --y {
+  syntax: "<number>";
+  initial-value: 50;
+  inherits: true;
+}
+
+:root {
+  --spring-easing: linear(
+    0, 0.002, 0.01 0.9%, 0.038 1.8%, 0.156, 0.312 5.8%, 0.789 11.1%, 1.015 14.2%,
+    1.096, 1.157, 1.199, 1.224 20.3%, 1.231, 1.231, 1.226, 1.214 24.6%,
+    1.176 26.9%, 1.057 32.6%, 1.007 35.5%, 0.984, 0.968, 0.956, 0.949 42%,
+    0.946 44.1%, 0.95 46.5%, 0.998 57.2%, 1.007, 1.011 63.3%, 1.012 68.3%,
+    0.998 84%, 1
+  );
+  --spring-duration: 1.66s;
+}
+
+.gooey-btn {
+  --a: 0;
+  --x: 50;
+  --y: 50;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.gooey-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: blur(10px) url(#goo);
+  background-image:
+    linear-gradient(0deg, transparent, transparent),
+    radial-gradient(
+      40% 70% at calc(var(--x) * 1%) calc(var(--y) * 1%),
+      var(--btn-color-light) 0%,
+      transparent 70%
+    );
+  background-clip: content-box, border-box;
+  padding: 8px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: var(--a, 0);
+  transition: --a 0.4s ease;
+}
+
+.gooey-btn:hover::after {
+  --a: 1;
+}
+
+@layer base {
+  /* 1. Reset & base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-text bg-primary-white dark:bg-primary-navy dark:text-white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* 2. Selection color (brand) */
+  ::selection {
+    @apply bg-primary-turquoise text-white;
+  }
+
+  /* 3. Heading typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  /* 4. Number styling */
+  .number {
+    @apply font-numbers;
+  }
+}
+
+@layer components {
+  /* Custom utility classes will go here */
+}

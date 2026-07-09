@@ -1,0 +1,241 @@
+html:
+<main id="app" class="dark">
+    
+    <header>
+        <h1>A Gooey button</h1>
+        <p>Hover to experience! (single element)</p>
+    </header>
+    
+    <div>
+    
+        <button type="button">
+            Gooey Button
+        </button>
+        
+    </div>
+    
+    <p>Inspired by <em>(and svg filter copied from)</em> <a target="_blank" href="https://codepen.io/thebabydino/pen/NWVdKaG">Ana's codepen</a>, go give her a ❤️ !</p>
+
+</main>
+
+
+<svg width="0" height="0" style="position: absolute;">
+  <filter id="goo" x="-50%" y="-50%" width="200%" height="200%">
+    <feComponentTransfer>
+      <feFuncA type="discrete" tableValues="0 1"></feFuncA>
+    </feComponentTransfer>
+    <feGaussianBlur stdDeviation="5"></feGaussianBlur>
+    <feComponentTransfer>
+      <feFuncA type="table" tableValues="-5 11"></feFuncA>
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    social icons
+-->
+<a class="social-icon codepen" href="https://codepen.io/simeydotme" title="view my codepens">
+    Made by Simey
+</a>
+
+<a class="social-icon twitter" href="https://twitter.com/simeydotme">
+    <svg viewBox="0 0 24 24">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
+    </svg>
+</a>
+<a class="social-icon github" href="https://github.com/simeydotme">
+    <svg viewBox="0 0 24 24">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+    </svg>
+</a>
+
+css:
+@property --a {
+    syntax: "<percentage>";
+    initial-value: 0%;
+    inherits: true;
+}
+
+.dark button {
+    --a: 0%;
+    --hue: 170deg;
+    --x: 50;
+    --y: 50;
+    --button: hsl(var(--hue), 66%, 66%);
+    --edge: 20px;
+    --size: 2em;
+    
+    background: transparent;
+    color: hsla(var(--hue), 80%, 30%, 0.7);
+    font-size: 1.8em;
+    position: relative;
+    padding: calc(var(--size)) calc(var(--size)*1.5);
+    animation: color 20s linear infinite both;
+    transition: 
+        --a .5s ease-in-out, 
+        scale var(--spring-duration) var(--spring-easing);
+    scale: 0.92;
+    isolation: isolate;
+    &:hover {
+        --a: 100%;
+        transition-duration: .5s, 1s;
+        box-shadow: none;
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    inset: 0em;
+    /** here's the magic. A blur and a svg filter */
+    filter: blur(12px) url(#goo) drop-shadow(0 .25em .5em hsla(0deg, 0%, 0%, 0.8)); 
+    /** followed by a radial-gradient which causes the
+    gooey effect to follow mouse-position */
+    background-image:
+        linear-gradient(0deg,var(--button),var(--button)),
+        radial-gradient(
+            40% 70% at calc(var(--x) * 1%) calc(var(--y) * 1%),
+            hsla(var(--hue), 77%, 77%, var(--a)) 0%,
+            transparent 90%
+        );
+    /** and finally a background-clip so the radial-gradient
+    is larger than the linear-gradient */
+    background-clip: content-box, border-box;
+    padding: 24px;
+    z-index: -1;
+    border: inherit;
+    animation: color 20s linear infinite both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@property --hue {
+    syntax: "<angle>";
+    initial-value: 170deg;
+    inherits: false;
+}
+
+@keyframes color {
+    from {
+        --hue: 170deg;
+    }
+    to {
+        --hue: 530deg;
+    }
+}
+
+body, html {
+    height: 100%;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    color: var(--light);
+    text-align: center;
+}
+
+:root {
+    --spring-easing: linear(
+    0, 0.002, 0.01 0.9%, 0.038 1.8%, 0.156, 0.312 5.8%, 0.789 11.1%, 1.015 14.2%,
+    1.096, 1.157, 1.199, 1.224 20.3%, 1.231, 1.231, 1.226, 1.214 24.6%,
+    1.176 26.9%, 1.057 32.6%, 1.007 35.5%, 0.984, 0.968, 0.956, 0.949 42%,
+    0.946 44.1%, 0.95 46.5%, 0.998 57.2%, 1.007, 1.011 63.3%, 1.012 68.3%,
+    0.998 84%, 1
+  );
+    --spring-duration: 1.66s;
+}
+
+js:
+/** 
+    very simply js to capture mouse position 
+    and set variables to the % location. Everything else is css/svg.
+**/
+function moveBg(e) {
+    const rect = e.target.getBoundingClientRect();
+    e.target.style.setProperty('--x', (e.clientX - rect.x) / rect.width * 100);
+    e.target.style.setProperty('--y', (e.clientY - rect.y) / rect.height * 100);
+}
+document.querySelector("button").addEventListener('pointermove', moveBg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** just some JS for the intro animation, nothing here is needed
+for the gooey interaction. **/
+let x;
+function intro() {
+    let i = 4; 
+    let $b = document.querySelector("button");
+    $b.style.setProperty( "--a", '100%' );
+    x = setInterval(() => {
+        $b.style.setProperty( 
+            "--x", ((Math.cos(i) + 2) / 3.6) * 100
+        );
+        $b.style.setProperty( 
+            "--y", ((Math.sin(i) + 2) / 3.6) * 100
+        );
+        i+= 0.03;
+        if( i > 11.5 ) {
+            clearInterval(x);
+            $b.style.setProperty( "--a", '' );
+        }
+    },16);
+}
+intro();
+document.querySelector("button").addEventListener('pointerover', (e) => {
+    clearInterval(x);
+    e.target.style.setProperty( "--a", '' );
+});"

@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "Cabinet Dentaire Arches"
+  },
+  "nav": {
+    "team": "Équipe",
+    "about": "À Propos",
+    "services": "Services",
+    "gallery": "Galerie",
+    "testimonials": "Témoignages",
+    "contact": "Contact",
+    "book": "Prendre Rendez-vous"
+  },
+  "hero": {
+    "badge": "Cabinet Dentaire Premium",
+    "headline": "Soins Dentaires Premium",
+    "subheadline": "Où la science rencontre l'élégance – dentisterie avancée dans un cadre accueillant.",
+    "cta": "Prendre Rendez-vous",
+    "whatsapp": "WhatsApp",
+    "scroll": "Défiler",
+    "patients": "Patients",
+    "years": "Années",
+    "reviews": "Avis",
+    "cardTitle": "Cabinet Dentaire Arches",
+    "cardSubtitle": "Clinique Dentaire Multidisciplinaire",
+    "cardTagline": "Excellence en soins dentaires"
+  },
+  "footer": {
+    "team": "Équipe",
+    "tagline": "Soins dentaires premium avec une touche humaine.",
+    "quickLinks": "Liens Rapides",
+    "contact": "Contact",
+    "address": "Calle Ejemplo, 123, 29600 Marbella, Espagne",
+    "languages": "Langues",
+    "copyright": "© {{year}} Cabinet Dentaire Arches. Tous droits réservés."
+  },
+  "servicesRotator": {
+    "title": "Nous sommes spécialisés en",
+    "list": [
+      "Contrôles",
+      "Implants",
+      "Détartrages",
+      "Blanchiments",
+      "Couronnes",
+      "Facettes",
+      "Urgences"
+    ],
+    "cta": "Prêt pour votre sourire parfait ?",
+    "button": "Réserver Maintenant"
+  },
+  "about": {
+    "heading": "À Propos",
+    "subtitle": "Votre clinique dentaire de confiance à Ciudad Quesada, Rojales depuis 2006.",
+    "whoWeAre": "Qui Sommes-Nous",
+    "description1": "Au Cabinet Dentaire Arches British, nous combinons l'expérience, les techniques avancées et une approche centrée sur le patient pour offrir des soins dentaires exceptionnels aux résidents et visiteurs de Ciudad Quesada et de la région environnante.",
+    "description2": "En tant que clinique bien établie avec une réputation de confiance depuis 2006, nous proposons des traitements doux, fiables et professionnels pour les patients de tous âges. Que vous ayez besoin de contrôles de routine, d'améliorations esthétiques, de solutions restauratrices ou de soins d'urgence, notre équipe de professionnels hautement qualifiés est là pour vous aider.",
+    "years": "Années",
+    "rating": "Évaluation",
+    "patients": "Patients Heureux"
+  },
+  "services": {
+    "eyebrow": "Ce que nous traitons",
+    "title": "Nos Services",
+    "sub": "Douze traitements, dentaires et esthétiques, dans un arc continu. Continuez à défiler pour mettre chacun en avant.",
+    "list": [
+      { "id": "General Dentistry", "name": "Dentisterie Générale", "description": "Examens de routine et soins préventifs pour garder chaque sourire en bonne santé." },
+      { "id": "Dental Implants", "name": "Implants Dentaires", "description": "Remplacements permanents et naturels pour les dents manquantes." },
+      { "id": "Dental Cleaning", "name": "Détartrage", "description": "Élimination professionnelle de la plaque et du tartre pour des gencives plus fortes." },
+      { "id": "Veneers & Crowns", "name": "Facettes et Couronnes", "description": "Restaurations personnalisées qui protègent et perfectionnent votre sourire." },
+      { "id": "Teeth Whitening", "name": "Blanchiment Dentaire", "description": "Éclaircissement sûr et efficace pour un sourire nettement plus blanc." },
+      { "id": "Dental Prosthetics", "name": "Prothèses Dentaires", "description": "Ponts et dentiers construits pour restaurer une fonction complète." },
+      { "id": "Lip Fillers", "name": "Remplissage des Lèvres", "description": "Améliorations à l'acide hyaluronique pour des lèvres plus pleines et équilibrées." },
+      { "id": "Chin Augmentation", "name": "Augmentation du Menton", "description": "Traitements de contour qui affinent le profil facial." },
+      { "id": "Perioral Wrinkles", "name": "Rides Péribuccales", "description": "Lissage ciblé des rides fines autour de la bouche." },
+      { "id": "Nasolabial Fold", "name": "Sillon Nasogénien", "description": "Adoucissement des plis qui vont du nez à la bouche." },
+      { "id": "Hyaluronic Acid", "name": "Acide Hyaluronique", "description": "Comblements polyvalents pour un volume et une hydratation naturels." },
+      { "id": "Invisible Orthodontics", "name": "Orthodontie Invisible", "description": "Aligneurs transparents qui redressent discrètement, à tout âge." }
+    ]
+  },
+  "team": {
+    "title": "FAISONS CONNAISSANCE",
+    "subtitle": "Votre Clinique Dentaire de Confiance à Ciudad Quesada depuis 2006",
+    "description": "Au Cabinet Dentaire Arches British, nous nous engageons à fournir des soins dentaires doux et de haute qualité dans un environnement convivial et détendu. Depuis notre ouverture en 2006, nous avons bâti une solide réputation auprès des résidents, des visiteurs saisonniers et des vacanciers à Ciudad Quesada, Rojales et ses environs. Notre mission est simple : offrir des soins dentaires professionnels, honnêtes et confortables qui placent les patients au premier plan.",
+    "meetTitle": "RENCONTREZ L'ÉQUIPE",
+    "meetSubtitle": "Des Professionnels Dévoués Engagés pour Votre Sourire",
+    "members": [
+      { "id": "tracey", "name": "Tracey Goldring", "role": "Assistante en Chirurgie Dentaire" },
+      { "id": "katarzyna", "name": "Dr. Katarzyna Lawniczek", "role": "Dentiste" },
+      { "id": "marija", "name": "Dr. Marija Aleksoska", "role": "Dentiste" },
+      { "id": "tamara", "name": "Tamara Sánchez", "role": "Réceptionniste et Assistante Dentaire" },
+      { "id": "megan", "name": "Megan Louise", "role": "Hygiéniste Dentaire" }
+    ]
+  },
+  "testimonials": {
+    "subtitle": "Ce que disent nos patients",
+    "title": "Témoignages de Patients",
+    "reviews": "avis",
+    "google": "Avis Google",
+    "translate": "Traduire"
+  },
+  "contact": {
+    "subtitle": "Contactez-nous",
+    "title": "Nous Contacter",
+    "form": {
+      "title": "Envoyez-nous un message",
+      "name": "Votre Nom",
+      "namePlaceholder": "Jean Dupont",
+      "email": "Adresse Email",
+      "emailPlaceholder": "vous@exemple.com",
+      "message": "Votre Message",
+      "messagePlaceholder": "Dites-nous comment nous pouvons vous aider...",
+      "send": "Envoyer le Message",
+      "sending": "Envoi en cours..."
+    },
+    "info": {
+      "title": "Coordonnées",
+      "address": "Calle Los Arcos, 19, 03170 Cdad. Quesada, Alicante, Espagne",
+      "directions": "Itinéraire",
+      "hours": "Horaires d'ouverture",
+      "monFri": "Lun–Ven: 9:00 – 19:00",
+      "sat": "Sam: 9:00 – 14:00",
+      "sun": "Dim: Fermé"
+    },
+    "success": "Votre message a été envoyé avec succès !",
+    "error": {
+      "fields": "Veuillez remplir tous les champs.",
+      "send": "Échec de l'envoi du message. Veuillez réessayer plus tard."
+    }
+  }
+}

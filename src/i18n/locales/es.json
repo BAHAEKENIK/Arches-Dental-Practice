@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "Clínica Dental Arches"
+  },
+  "nav": {
+    "team": "Equipo",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "testimonials": "Testimonios",
+    "contact": "Contacto",
+    "book": "Pedir Cita"
+  },
+  "hero": {
+    "badge": "Clínica Dental Premium",
+    "headline": "Atención Dental Premium",
+    "subheadline": "Donde la ciencia se encuentra con la elegancia – odontología avanzada en un entorno acogedor.",
+    "cta": "Pedir Cita",
+    "whatsapp": "WhatsApp",
+    "scroll": "Desplazar",
+    "patients": "Pacientes",
+    "years": "Años",
+    "reviews": "Opiniones",
+    "cardTitle": "Clínica Dental Arches",
+    "cardSubtitle": "Clínica Dental Multidisciplinar",
+    "cardTagline": "Excelencia en cuidado dental"
+  },
+  "footer": {
+    "team": "Equipo",
+    "tagline": "Atención dental premium con un toque humano.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "address": "Calle Ejemplo, 123, 29600 Marbella, España",
+    "languages": "Idiomas",
+    "copyright": "© {{year}} Clínica Dental Arches. Todos los derechos reservados."
+  },
+  "servicesRotator": {
+    "title": "Nos especializamos en",
+    "list": [
+      "Revisiones",
+      "Implantes",
+      "Limpiezas",
+      "Blanqueamientos",
+      "Coronas",
+      "Carillas",
+      "Urgencias"
+    ],
+    "cta": "¿Listo para tu sonrisa perfecta?",
+    "button": "Reservar Ahora"
+  },
+  "about": {
+    "heading": "Sobre Nosotros",
+    "subtitle": "Su clínica dental de confianza en Ciudad Quesada, Rojales desde 2006.",
+    "whoWeAre": "Quiénes Somos",
+    "description1": "En Clínica Dental Arches British, combinamos experiencia, técnicas avanzadas y un enfoque centrado en el paciente para ofrecer una atención dental excepcional a residentes y visitantes de Ciudad Quesada y sus alrededores.",
+    "description2": "Como clínica consolidada con una reputación de confianza desde 2006, ofrecemos tratamientos suaves, fiables y profesionales para pacientes de todas las edades. Ya sea que necesite revisiones rutinarias, mejoras estéticas, soluciones restaurativas o atención dental urgente, nuestro equipo de profesionales altamente capacitados está aquí para ayudarle.",
+    "years": "Años",
+    "rating": "Calificación",
+    "patients": "Pacientes Felices"
+  },
+  "services": {
+    "eyebrow": "Qué tratamos",
+    "title": "Nuestros Servicios",
+    "sub": "Doce tratamientos, dentales y estéticos, en un arco continuo. Sigue desplazándote para destacar cada uno.",
+    "list": [
+      { "id": "General Dentistry", "name": "Odontología General", "description": "Exámenes de rutina y cuidado preventivo para mantener cada sonrisa saludable." },
+      { "id": "Dental Implants", "name": "Implantes Dentales", "description": "Reemplazos permanentes y de aspecto natural para dientes faltantes." },
+      { "id": "Dental Cleaning", "name": "Limpieza Dental", "description": "Eliminación profesional de placa y sarro para encías más fuertes." },
+      { "id": "Veneers & Crowns", "name": "Carillas y Coronas", "description": "Restauraciones personalizadas que protegen y perfeccionan tu sonrisa." },
+      { "id": "Teeth Whitening", "name": "Blanqueamiento Dental", "description": "Aclarado seguro y efectivo para una sonrisa notablemente más blanca." },
+      { "id": "Dental Prosthetics", "name": "Prótesis Dentales", "description": "Puentes y dentaduras construidos para restaurar la función completa." },
+      { "id": "Lip Fillers", "name": "Rellenos de Labios", "description": "Mejoras con ácido hialurónico para labios más llenos y equilibrados." },
+      { "id": "Chin Augmentation", "name": "Aumento de Mentón", "description": "Tratamientos de contorno que refinan el perfil facial." },
+      { "id": "Perioral Wrinkles", "name": "Arrugas Periorales", "description": "Suavizado específico de líneas finas alrededor de la boca." },
+      { "id": "Nasolabial Fold", "name": "Pliegue Nasolabial", "description": "Suavizado de las líneas que van desde la nariz a la boca." },
+      { "id": "Hyaluronic Acid", "name": "Ácido Hialurónico", "description": "Rellenos versátiles para volumen e hidratación natural." },
+      { "id": "Invisible Orthodontics", "name": "Ortodoncia Invisible", "description": "Alineadores transparentes que enderezan discretamente, a cualquier edad." }
+    ]
+  },
+  "team": {
+    "title": "CONÓCENOS",
+    "subtitle": "Su Clínica Dental de Confianza en Ciudad Quesada desde 2006",
+    "description": "En Arches British Dental Practice, nos dedicamos a brindar una atención dental suave y de alta calidad en un ambiente amigable y relajado. Desde nuestra apertura en 2006, hemos construido una sólida reputación entre residentes, visitantes estacionales y turistas en Ciudad Quesada, Rojales y áreas circundantes. Nuestra misión es simple: ofrecer una atención dental profesional, honesta y cómoda que priorice a los pacientes.",
+    "meetTitle": "CONOCE AL EQUIPO",
+    "meetSubtitle": "Profesionales Dedicados Comprometidos con tu Sonrisa",
+    "members": [
+      { "id": "tracey", "name": "Tracey Goldring", "role": "Asistente de Cirugía Dental" },
+      { "id": "katarzyna", "name": "Dra. Katarzyna Lawniczek", "role": "Dentista" },
+      { "id": "marija", "name": "Dra. Marija Aleksoska", "role": "Dentista" },
+      { "id": "tamara", "name": "Tamara Sánchez", "role": "Recepcionista y Asistente Dental" },
+      { "id": "megan", "name": "Megan Louise", "role": "Higienista Dental" }
+    ]
+  },
+  "testimonials": {
+    "subtitle": "Lo que dicen nuestros pacientes",
+    "title": "Testimonios de Pacientes",
+    "reviews": "opiniones",
+    "google": "Opiniones de Google",
+    "translate": "Traducir"
+  },
+  "contact": {
+    "subtitle": "Ponte en Contacto",
+    "title": "Contáctanos",
+    "form": {
+      "title": "Envíanos un mensaje",
+      "name": "Tu Nombre",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "message": "Tu Mensaje",
+      "messagePlaceholder": "Cuéntanos cómo podemos ayudarte...",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "address": "Calle Los Arcos, 19, 03170 Cdad. Quesada, Alicante, España",
+      "directions": "Cómo llegar",
+      "hours": "Horario de Apertura",
+      "monFri": "Lun–Vie: 9:00 – 19:00",
+      "sat": "Sáb: 9:00 – 14:00",
+      "sun": "Dom: Cerrado"
+    },
+    "success": "¡Tu mensaje ha sido enviado con éxito!",
+    "error": {
+      "fields": "Por favor, completa todos los campos.",
+      "send": "Error al enviar el mensaje. Inténtalo de nuevo más tarde."
+    }
+  }
+}

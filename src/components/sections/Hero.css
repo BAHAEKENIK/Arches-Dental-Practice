@@ -1,0 +1,18 @@
+/* ============================================================
+   Hero Headline — solid color at top, scroll-image-clip effect
+   ============================================================ */
+
+.hero-headline {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.hero-headline--scrolled {
+  background-image: url('/images/500142077_122099974760888929_1042645294992697612_n.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

@@ -1,0 +1,217 @@
+/* ============================================================
+   Footer Section – scoped to .footer-section
+   ============================================================ */
+
+.footer-section {
+  padding: 3rem 1.5rem 1.5rem;
+  background: var(--footer-bg, #f8f6f3);
+  color: var(--footer-text, #1e2b2a);
+  transition: background 0.3s, color 0.3s;
+}
+
+.footer-section.dark {
+  --footer-bg: #0b1210;
+  --footer-text: #e7ede9;
+  --footer-link: rgba(231, 237, 233, 0.7);
+  --footer-link-hover: #cbb37a;
+  --footer-border: rgba(255, 255, 255, 0.06);
+  --footer-icon: #cbb37a;
+  --footer-logo-filter: brightness(0) invert(1);
+  /* Social icon background – matches Contact's light semi-transparent */
+  --footer-social-bg: rgba(255, 255, 255, 0.08);
+  --footer-social-hover: #cbb37a;
+  --footer-social-color: #e7ede9;
+  --footer-social-hover-color: #0b1210;
+}
+
+.footer-section.light {
+  --footer-bg: #f7f5f2;
+  --footer-text: #16211f;
+  --footer-link: rgba(22, 33, 31, 0.7);
+  --footer-link-hover: #3db7b5;
+  --footer-border: rgba(0, 0, 0, 0.06);
+  --footer-icon: #3db7b5;
+  --footer-logo-filter: none;
+  --footer-social-bg: rgba(0, 0, 0, 0.05);
+  --footer-social-hover: #3db7b5;
+  --footer-social-color: #16211f;
+  --footer-social-hover-color: #ffffff;
+}
+
+/* ---- Container ---- */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---- Grid ---- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ---- Logo ---- */
+.footer-logo {
+  height: 2.75rem;
+  width: auto;
+  object-fit: contain;
+  filter: var(--footer-logo-filter);
+  transition: filter 0.3s;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .footer-section.dark .footer-logo {
+    height: 3.25rem;
+  }
+}
+
+/* ---- Tagline ---- */
+.footer-tagline {
+  font-size: 0.875rem;
+  color: var(--footer-link);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- Social – matches Contact's style ---- */
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--footer-social-bg);
+  color: var(--footer-social-color);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  font-size: 1.25rem;
+}
+
+.social-link:hover {
+  background: var(--footer-social-hover);
+  color: var(--footer-social-hover-color);
+  transform: scale(1.05);
+}
+
+/* ---- Headings ---- */
+.footer-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--footer-text);
+  margin-bottom: 1rem;
+}
+
+/* ---- Quick Links ---- */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link-btn {
+  background: none;
+  border: none;
+  color: var(--footer-link);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0;
+  text-align: left;
+}
+
+.footer-link-btn:hover {
+  color: var(--footer-link-hover);
+}
+
+/* ---- Contact ---- */
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--footer-link);
+  line-height: 1.4;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.125rem;
+  color: var(--footer-icon);
+}
+
+/* ---- Copyright ---- */
+.footer-copyright {
+  border-top: 1px solid var(--footer-border);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--footer-link);
+  opacity: 0.6;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .footer-section {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-grid {
+    gap: 2rem;
+  }
+
+  .footer-logo {
+    height: 2.25rem;
+  }
+
+  .footer-heading {
+    font-size: 1rem;
+  }
+
+  .contact-item {
+    font-size: 0.8rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    height: 2rem;
+  }
+}

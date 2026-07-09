@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "Arches Dental Practice"
+  },
+  "nav": {
+    "team": "Team",
+    "about": "About Us",
+    "services": "Services",
+    "gallery": "Gallery",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "book": "Book Appointment"
+  },
+  "hero": {
+    "badge": "Premium Dental Clinic",
+    "headline": "Premium Dental Care",
+    "subheadline": "Where science meets elegance – advanced dentistry in a welcoming environment.",
+    "cta": "Book Appointment",
+    "whatsapp": "WhatsApp",
+    "scroll": "Scroll",
+    "patients": "Patients",
+    "years": "Years",
+    "reviews": "Reviews",
+    "cardTitle": "Arches Dental Practice",
+    "cardSubtitle": "Multidisciplinary Dental Clinic",
+    "cardTagline": "Excellence in dental care"
+  },
+  "footer": {
+    "tagline": "Premium dental care with a human touch.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "team": "Team",
+    "address": "Calle Ejemplo, 123, 29600 Marbella, Spain",
+    "languages": "Languages",
+    "copyright": "© {{year}} Arches Dental Practice. All rights reserved."
+  },
+  "servicesRotator": {
+    "title": "We specialize in",
+    "list": [
+      "Check-ups",
+      "Implants",
+      "Cleanings",
+      "Whitening",
+      "Crowns",
+      "Veneers",
+      "Emergencies"
+    ],
+    "cta": "Ready for your perfect smile?",
+    "button": "Book Now"
+  },
+  "about": {
+    "heading": "About Us",
+    "subtitle": "Your trusted dental clinic in Ciudad Quesada, Rojales since 2006.",
+    "whoWeAre": "Who We Are",
+    "description1": "At Arches British Dental Practice, we combine experience, advanced techniques, and a patient-focused approach to deliver exceptional dental care for residents and visitors of Ciudad Quesada and the surrounding Rojales area.",
+    "description2": "As a well-established clinic with a trusted reputation since 2006, we provide gentle, reliable, and professional treatments for patients of all ages. Whether you need routine check-ups, cosmetic improvements, restorative solutions, or urgent dental attention, our team of highly trained professionals is here to help.",
+    "years": "Years",
+    "rating": "Rating",
+    "patients": "Happy Patients"
+  },
+  "services": {
+    "eyebrow": "What we treat",
+    "title": "Our Services",
+    "sub": "Twelve treatments, dental and aesthetic, in one continuous arc. Keep scrolling to bring each one forward.",
+    "list": [
+      { "id": "General Dentistry", "name": "General Dentistry", "description": "Routine exams and preventive care to keep every smile healthy." },
+      { "id": "Dental Implants", "name": "Dental Implants", "description": "Permanent, natural-looking replacements for missing teeth." },
+      { "id": "Dental Cleaning", "name": "Dental Cleaning", "description": "Professional plaque and tartar removal for stronger gums." },
+      { "id": "Veneers & Crowns", "name": "Veneers & Crowns", "description": "Custom restorations that protect and perfect your smile." },
+      { "id": "Teeth Whitening", "name": "Teeth Whitening", "description": "Safe, effective brightening for a noticeably whiter smile." },
+      { "id": "Dental Prosthetics", "name": "Dental Prosthetics", "description": "Bridges and dentures built to restore full function." },
+      { "id": "Lip Fillers", "name": "Lip Fillers", "description": "Hyaluronic-acid enhancements for fuller, balanced lips." },
+      { "id": "Chin Augmentation", "name": "Chin Augmentation", "description": "Contouring treatments that refine facial profile." },
+      { "id": "Perioral Wrinkles", "name": "Perioral Wrinkles", "description": "Targeted smoothing for fine lines around the mouth." },
+      { "id": "Nasolabial Fold", "name": "Nasolabial Fold", "description": "Softening the fold lines that run from nose to mouth." },
+      { "id": "Hyaluronic Acid", "name": "Hyaluronic Acid", "description": "Versatile fillers for natural volume and hydration." },
+      { "id": "Invisible Orthodontics", "name": "Invisible Orthodontics", "description": "Clear aligners that straighten discreetly, at any age." }
+    ]
+  },
+  "team": {
+    "title": "GET TO KNOW US",
+    "subtitle": "Your Trusted Dental Clinic in Ciudad Quesada Since 2006",
+    "description": "At Arches British Dental Practice, we are dedicated to providing gentle, high-quality dental care in a friendly and relaxed environment. Since opening our doors in 2006, we have built a strong reputation among residents, seasonal visitors, and holiday-makers across Ciudad Quesada, Rojales, and the surrounding areas. Our mission is simple: to offer professional, honest, and comfortable dental care that puts patients first.",
+    "meetTitle": "MEET THE TEAM",
+    "meetSubtitle": "Dedicated Professionals Committed to Your Smile",
+    "members": [
+      { "id": "tracey", "name": "Tracey Goldring", "role": "Dental Surgery Assistant" },
+      { "id": "katarzyna", "name": "Dr. Katarzyna Lawniczek", "role": "Dentist" },
+      { "id": "marija", "name": "Dr. Marija Aleksoska", "role": "Dentist" },
+      { "id": "tamara", "name": "Tamara Sánchez", "role": "Recepcionist and Dental Assistant" },
+      { "id": "megan", "name": "Megan Louise", "role": "Dental Hygienist" }
+    ]
+  },
+  "testimonials": {
+    "subtitle": "What our patients say",
+    "title": "Patient Testimonials",
+    "reviews": "reviews",
+    "google": "Google Reviews",
+    "translate": "Translate"
+  },
+  "contact": {
+    "subtitle": "Get in Touch",
+    "title": "Contact Us",
+    "form": {
+      "title": "Send us a message",
+      "name": "Your Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "message": "Your Message",
+      "messagePlaceholder": "Tell us how we can help...",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Calle Los Arcos, 19, 03170 Cdad. Quesada, Alicante, Spain",
+      "directions": "Get Directions",
+      "hours": "Opening Hours",
+      "monFri": "Mon–Fri: 9:00 AM – 7:00 PM",
+      "sat": "Sat: 9:00 AM – 2:00 PM",
+      "sun": "Sun: Closed"
+    },
+    "success": "Your message has been sent successfully!",
+    "error": {
+      "fields": "Please fill in all fields.",
+      "send": "Failed to send message. Please try again later."
+    }
+  }
+}

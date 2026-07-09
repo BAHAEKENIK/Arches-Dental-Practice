@@ -1,0 +1,401 @@
+/* ==========================================================================
+   Services — circular scroll gallery
+   Scoped to this section only: it rides the page's own scroll (via
+   animation-timeline: view()) instead of taking over the whole document,
+   so it drops in cleanly between other SPA sections.
+   ========================================================================== */
+
+@property --services-k {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
+
+@property --services-ang {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.services {
+  position: relative;
+  padding-block: clamp(2rem, 5vw, 4rem) 0;
+  overflow: clip;
+
+  /* ---- Light theme (default) ---- */
+  --sv-bg: #f7f5f2;
+  --sv-ink: #16211f;
+  --sv-muted: #5b6864;
+  --sv-accent: #0f6f64;
+  --sv-card-bg: #d9d9d6;
+  --sv-caption-bg: rgba(255, 255, 255, 0.6);
+  --sv-caption-ink: #16211f;
+  --sv-shadow: rgba(15, 20, 18, 0.28);
+  --sv-off-tint: #f3f1ee;
+
+  background: var(--sv-bg);
+  color: var(--sv-ink);
+}
+
+/* ---- Dark theme ---- */
+@media (prefers-color-scheme: dark) {
+  .services {
+    --sv-bg: #0b1210;
+    --sv-ink: #e7ede9;
+    --sv-muted: #9caba6;
+    --sv-accent: #2fd9bc;
+    --sv-card-bg: #1b2a27;
+    --sv-caption-bg: rgba(8, 14, 12, 0.6);
+    --sv-caption-ink: #e7ede9;
+    --sv-shadow: rgba(0, 0, 0, 0.65);
+    --sv-off-tint: #0f1917;
+  }
+}
+
+html.dark .services,
+.dark .services {
+  --sv-bg: #0b1210;
+  --sv-ink: #e7ede9;
+  --sv-muted: #9caba6;
+  --sv-accent: #2fd9bc;
+  --sv-card-bg: #1b2a27;
+  --sv-caption-bg: rgba(8, 14, 12, 0.6);
+  --sv-caption-ink: #e7ede9;
+  --sv-shadow: rgba(0, 0, 0, 0.65);
+  --sv-off-tint: #0f1917;
+}
+
+.services-intro {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  max-width: 40em;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.services-eyebrow {
+  margin: 0;
+  color: var(--sv-accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.services-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.services-sub {
+  margin: 0;
+  color: var(--sv-muted);
+}
+
+/* ---- Scroll runway ---- */
+.services-track {
+  position: relative;
+  height: calc(var(--n, 12) * 55vh + 100vh);
+  animation: services-rotate 1s linear both;
+  animation-timeline: view();
+  animation-range: cover 0% cover 100%;
+}
+
+@keyframes services-rotate {
+  from {
+    --services-k: 0;
+  }
+  to {
+    --services-k: 1;
+  }
+}
+
+.services-stage {
+  position: sticky;
+  top: 0;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    filter: url(#services-grain);
+    content: '';
+    pointer-events: none;
+  }
+}
+
+.services-scene {
+  display: grid;
+  overflow: hidden;
+  perspective: 50em;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.services-assembly {
+  --dir: 0;
+  /* fixed 9:16 portrait ratio for every card, per spec */
+  --r: 9 / 16;
+  --w: clamp(4em, min(50vh, 25vw), 18em);
+  --z: calc(-0.5 * var(--w) / tan(0.5turn / var(--n, 12)));
+  display: grid;
+  place-self: center;
+  transform-style: preserve-3d;
+  translate: 0 0 var(--z);
+  rotate: var(--dir) calc(1 - var(--dir)) 0
+    calc((var(--services-k) + 0.5) * -1turn);
+}
+
+@media (max-aspect-ratio: 2 / 3) {
+  .services-assembly {
+    --dir: 1;
+  }
+}
+
+.services-card {
+  grid-area: 1 / 1;
+  transform-style: preserve-3d;
+
+  /* progress value of this card, and its shortest circular distance to
+     whichever card is currently centered (--services-k) */
+  --j: calc(var(--i) / var(--n, 12));
+  --dif-lin: calc(var(--j) - mod(var(--services-k) + 1, 1));
+  --abs-lin: abs(var(--dif-lin));
+  --dif-mid: calc(0.5 - var(--abs-lin));
+  --abs-mid: abs(var(--dif-mid));
+  --dif-arc: calc(2 * (0.5 - var(--abs-mid)));
+  --lim: 0.35;
+  --sel: max(0, calc((var(--lim) - var(--dif-arc)) / var(--lim)));
+  --out: calc(1 - var(--sel));
+  --hov: 0;
+
+  width: var(--w);
+  aspect-ratio: var(--r);
+  transform: rotate3d(var(--dir), calc(1 - var(--dir)), 0, calc(var(--j) * 1turn))
+    translateZ(var(--z)) rotate(calc(var(--dir) * 0.5turn));
+
+  .services-card-front {
+    rotate: y calc((1 + var(--hov)) * 0.5turn);
+  }
+
+  &:hover,
+  &:focus-within {
+    --hov: round(var(--sel));
+  }
+
+  @supports not (scale: abs(-1)) {
+    --abs-lin: max(var(--dif-lin), -1 * var(--dif-lin));
+    --abs-mid: max(var(--dif-mid), -1 * var(--dif-mid));
+  }
+}
+
+.services-card-front,
+.services-card-back {
+  grid-area: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  border: solid 3px transparent;
+  border-radius: 0.75em;
+  box-shadow: 5px 5px 13px var(--sv-shadow);
+  backface-visibility: hidden;
+  isolation: isolate;
+  transition: rotate 0.35s ease-out, --services-ang 0.35s ease-out;
+
+  /* spinning highlight ring on the centered/hovered card, echoing the
+     reference gallery's repeating-conic-gradient border */
+  --services-ang: calc(-45deg + var(--hov) * 180deg);
+  background:
+    var(--url) 50% / cover no-repeat padding-box,
+    linear-gradient(var(--sv-card-bg) 0 0) padding-box,
+    repeating-conic-gradient(
+        from var(--services-ang),
+        transparent 0% 15%,
+        color-mix(in srgb, var(--sv-accent) calc(var(--sel) * 100%), transparent) 20% 30%,
+        transparent 35% 50%
+      )
+      border-box;
+  background-blend-mode: multiply, normal, normal;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    opacity: var(--out);
+    background: var(--sv-off-tint);
+    mix-blend-mode: color;
+    content: '';
+    pointer-events: none;
+  }
+}
+
+.services-card-front {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  padding: 0.75em;
+  text-align: center;
+  pointer-events: none;
+
+  h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.05em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    pointer-events: auto;
+  }
+}
+
+.services-card-back {
+  rotate: y calc(var(--hov) * 0.5turn);
+}
+
+.services-card-back img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: var(--pos, 50% 50%);
+}
+
+.services-card-back figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 0.6em 0.75em;
+  background: var(--sv-caption-bg);
+  color: var(--sv-caption-ink);
+  font-size: 0.85em;
+  backdrop-filter: blur(6px);
+  opacity: round(up, var(--sel));
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Fallbacks: browsers without scroll-driven animation support, and anyone
+   who has asked for reduced motion, get a plain responsive grid instead
+   of the rotating stage. Same markup, no JS branching required.
+   ========================================================================== */
+@supports not (animation-timeline: view()) {
+  .services-track {
+    height: auto;
+    animation: none;
+  }
+
+  .services-stage {
+    position: static;
+    height: auto;
+    padding-block: 1.5rem;
+  }
+
+  .services-assembly {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    width: min(72rem, 100%);
+    padding-inline: 1.5rem;
+    perspective: none;
+    transform: none;
+    translate: none;
+    rotate: none;
+  }
+
+  .services-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: auto;
+    aspect-ratio: auto;
+    transform: none;
+  }
+
+  .services-card-front,
+  .services-card-back {
+    position: static;
+    grid-area: auto;
+    rotate: none !important;
+  }
+
+  .services-card-front {
+    background: none;
+    box-shadow: none;
+
+    h3 {
+      color: var(--sv-ink);
+      text-shadow: none;
+    }
+  }
+
+  .services-card-back {
+    aspect-ratio: 9 / 16;
+  }
+
+  .services-card-back figcaption {
+    position: static;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-track {
+    height: auto;
+    animation: none;
+  }
+
+  .services-stage {
+    position: static;
+    height: auto;
+    padding-block: 1.5rem;
+  }
+
+  .services-assembly {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    width: min(72rem, 100%);
+    padding-inline: 1.5rem;
+    perspective: none;
+    transform: none;
+    translate: none;
+    rotate: none;
+  }
+
+  .services-card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: auto;
+    aspect-ratio: auto;
+    transform: none;
+  }
+
+  .services-card-front,
+  .services-card-back {
+    position: static;
+    grid-area: auto;
+    rotate: none !important;
+  }
+
+  .services-card-front {
+    background: none;
+    box-shadow: none;
+
+    h3 {
+      color: var(--sv-ink);
+      text-shadow: none;
+    }
+  }
+
+  .services-card-back {
+    aspect-ratio: 9 / 16;
+  }
+
+  .services-card-back figcaption {
+    position: static;
+    opacity: 1;
+  }
+}
