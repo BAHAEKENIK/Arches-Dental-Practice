@@ -61,7 +61,7 @@ const Team: React.FC = () => {
               <figure
                 className="team-card"
                 key={member.id}
-                style={{ ['--card-bg-image' as any]: `url(${src})` }}
+                style={{ '--card-bg-image': `url(${src})` } as React.CSSProperties}
               >
                 <img src={src} alt={member.name} loading="lazy" />
                 <figcaption>

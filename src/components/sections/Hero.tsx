@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useMemo, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaWhatsapp, FaArrowDown, FaPhoneAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaArrowDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../hooks/useTheme';
 import './Hero.css';
@@ -41,18 +41,16 @@ const Hero: React.FC = () => {
   }, []);
 
   // Floating particles – generated only once
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 20 }, (_, i) => ({
-        id: i,
-        size: Math.random() * 6 + 2,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        duration: Math.random() * 20 + 10,
-        delay: Math.random() * 10,
-      })),
-    []
-  );
+  const [particles] = useState(() =>
+  Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    size: Math.random() * 6 + 2,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    duration: Math.random() * 20 + 10,
+    delay: Math.random() * 10,
+  }))
+);
 
   // Conditional text colors
   const textColor = resolvedTheme === 'dark' ? 'text-white' : 'text-text';

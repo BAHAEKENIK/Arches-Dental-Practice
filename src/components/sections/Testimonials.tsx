@@ -190,6 +190,7 @@ const Testimonials: React.FC = () => {
         const next = prev + increment;
         if (next >= 100) {
           setCurrentIndex((prevIndex) => (prevIndex + 1) % allReviews.length);
+          setProgress(0); // reset progress when changing slide
           return 0;
         }
         return next;
@@ -199,21 +200,20 @@ const Testimonials: React.FC = () => {
     return () => clearInterval(timer);
   }, [allReviews.length, isPaused]);
 
-  // Reset progress when index changes manually
-  useEffect(() => {
-    setProgress(0);
-  }, [currentIndex]);
-
+  // Navigation functions – reset progress manually
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + allReviews.length) % allReviews.length);
+    setProgress(0);
   };
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev + 1) % allReviews.length);
+    setProgress(0);
   };
 
   const goToIndex = (index: number) => {
     setCurrentIndex(index);
+    setProgress(0);
   };
 
   const toggleLike = (id: number) => {
