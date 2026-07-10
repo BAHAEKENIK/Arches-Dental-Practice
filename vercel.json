@@ -5,8 +5,8 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "env": {
-    "VITE_EMAILJS_SERVICE_ID": "@emailjs_service_id",
-    "VITE_EMAILJS_TEMPLATE_ID": "@emailjs_template_id",
-    "VITE_EMAILJS_PUBLIC_KEY": "@emailjs_public_key"
+    "VITE_EMAILJS_SERVICE_ID": "service_c1b5sko",
+    "VITE_EMAILJS_TEMPLATE_ID": "template_1zwl3qr",
+    "VITE_EMAILJS_PUBLIC_KEY": "yVPGS-aaMlJl9mYJI"
   }
 }
